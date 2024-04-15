@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const db = require('../db/index')
 const productController = {
     index: function (req, res) {
@@ -22,3 +23,14 @@ const productController = {
             })
         }
     },
+=======
+const express = require('express');
+const router = express.Router();
+const db = require("../db/index");
+
+
+
+
+
+module.exports = productocontroller;
+>>>>>>> f02a2853a5df6a1c262f1432fa01fd0d36f213ad
