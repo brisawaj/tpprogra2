@@ -57,7 +57,7 @@ const ropa = {
             comentario: [
                 {
                 id: 4,
-                nombreDeUsuario:"antonia1000",
+                nombreDeUsuario:"antonio1000",
                 textoDelComentario:"gracias, me encanto" ,
                 imagenDePerfil: "foto"
             }
@@ -144,4 +144,4 @@ const ropa = {
 }
 
 
-module.exports = ropa
+module.exports = ropa ;
