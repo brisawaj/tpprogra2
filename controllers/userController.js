@@ -1,6 +1,6 @@
 const db = require('../db/index')
 
-const productController = {
+const userController = {
     
     index: function (req, res) {
         return res.render("index")
@@ -20,5 +20,5 @@ const productController = {
     
     
 
-module.exports = productController;
+module.exports = userController;
 
