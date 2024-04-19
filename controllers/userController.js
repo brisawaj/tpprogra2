@@ -16,6 +16,10 @@ const userController = {
     search: function (req, res) {
         return res.render("search-results")
     },
+    
+    register: function(req, res) {
+        return res.render('register')
+    } 
  }
     
     
