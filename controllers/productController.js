@@ -9,7 +9,7 @@ const productController = {
     filterById: function (req, res) {
        
         return res.render('product', {
-            index: resultado,
+            product: db.producto,
             mensaje:'Productos con ese id'                
         })
     },
