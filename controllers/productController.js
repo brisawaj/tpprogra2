@@ -16,6 +16,9 @@ const productController = {
     search: function (req, res) {
         return res.render("search-results")
     },
+    productAdd: function (req, res) {
+        return res.render("productAdd")
+    },
  }
     
     

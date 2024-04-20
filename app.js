@@ -1,4 +1,5 @@
 var createError = require('http-errors');
+const db = require('./db/index');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');

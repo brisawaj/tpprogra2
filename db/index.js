@@ -1,4 +1,4 @@
-const ropa = {
+const db = {
     usuario:
     {
         email: "catalopez@gmail.com",
@@ -144,4 +144,4 @@ const ropa = {
 }
 
 
-module.exports = ropa ;
+module.exports = db ;
