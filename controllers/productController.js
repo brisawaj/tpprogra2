@@ -1,7 +1,10 @@
 const db = require('../db/index')
 
 const productController = {
- 
+    
+    index: function (req, res) {
+        return res.render("index", {product: db.producto})
+    },
 
     filterById: function (req, res) {
        
