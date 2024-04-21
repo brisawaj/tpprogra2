@@ -7,4 +7,3 @@ router.get('/search', productController.search)
 router.get('/productAdd', productController.productAdd)
 
 module.exports = router;
-
