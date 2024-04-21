@@ -9,7 +9,7 @@ const userController = {
     filterById: function (req, res) {
        
         return res.render('product', {
-            product: db.producto,
+            productos: db.producto,
             mensaje:'Productos con ese id'                
         })
     },
@@ -25,7 +25,7 @@ const userController = {
         return res.render('login')
     },
     profile: function(req, res) {
-        return res.render('profile' , { usuario: db.usuario, productos: db.productos })
+        return res.render('profile' , { usuario: db.usuario, productos: db.producto })
     },
     profileEdit: function(req, res) {
         return res.render('profileEdit')
