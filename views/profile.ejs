@@ -11,12 +11,13 @@
 	<section class="info-usuario container products-wrapper">
 		<div class="row">
 			<div class="img-container offset-3 col-2">
-				<img src= <%= usuario[0].fotoDePerfil %> alt="foto de perfil" class="foto-perfil">
+
+				<img src="<%= usuario[0].fotoDePerfil %>" alt="<%= usuario[0].fotoDePerfil %>" class="foto-perfil">
 			</div>
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
 					<h1 class="main-title"> <%= usuario[0].usuario %>
-						<a href="profileEdit.html">
+						<a href="/users/profileEdit">
 							<i class="fas fa-cog"></i>
 						</a>
 					</h1>
@@ -42,24 +43,27 @@
 				<h2 class="products-title">Mis productos</h2>
 			</div>
 			<!-- Show mis productos -->
-			<div class="col-12 col-sm-6 col-lg-3">
-				<section class="product-box">
-					<a href="product.html">
-						<figure class="product-box_image">
-							<img src= "<%= productos[0].imagen %>" alt="cafetera moulinex">
-						</figure>
-						<article class="product-box_data">
-							<h2> <%= productos[0].producto %> </h2>
-							<p> <%= productos[0].descripcion %></p>
-							<p>Comentarios: <%= productos[0].comentarios.length %></p>
-						</article>
-					</a>
-				</section>
-				
-			
-			</div>
+			<%for (var i=0; i < productos.length ;i++ ){%>
+				<div class="col-12 col-sm-6 col-lg-3">
+					<section class="product-box">
+						<a href="/products/id/<%= productos[i].id %>">
+							<figure class="product-box_image">
+								<img src="<%= productos[i].imagen %>" alt="<%= productos[i].producto %>">
+							</figure>
+							<article class="product-box_data">
+								<h2>
+									<%=productos[i].producto %>
+								</h2>
+								<p>
+									<%= productos[i].descripcion %>
+								</p>
+								<p>Comentarios: <%= productos[i].comentarios.length %></p>
+							</article>
+						</a>
+					</section>
+				</div>
+				<% } %>
 		</div>
-	</div>
 	<!-- /Mis productos -->
 	<%- include('./partials/footer') %>
 

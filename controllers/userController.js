@@ -25,10 +25,11 @@ const userController = {
         return res.render('login')
     },
     profile: function(req, res) {
+        console.log(db.producto)
         return res.render('profile' , { usuario: db.usuario, productos: db.producto })
     },
     profileEdit: function(req, res) {
-        return res.render('profileEdit')
+        return res.render('profileEdit', { usuario: db.usuario, productos: db.producto })
     },
 
  }
