@@ -1,7 +1,7 @@
 const db = {
-    usuario:
+    usuario:[
     {
-        id: 1
+        id: 1,
         email: "catalopez@gmail.com",
         usuario: "catalopez",
         contraseña: "cata123",
@@ -10,7 +10,7 @@ const db = {
         fotoDePerfil: "/images/users/user_mujer.jpg"
     },
     {
-        id: 2
+        id: 2,
         email: "brisa@gmail.com.ar",
         usuario:"brisawaj",
         contraseña:"briSA",
@@ -19,7 +19,7 @@ const db = {
         fotoDePerfil: "/images/users/user_mujer.jpg"
     },
     {
-        id: 3
+        id: 3,
         email: "sol@gmail.com.ar",
         usuario: "solorsi",
         contraseña: "Sol",
@@ -28,7 +28,7 @@ const db = {
         fotoDePerfil: "/images/users/user_mujer.jpg"
     },
     {
-        id: 4
+        id: 4,
         email: "pedro@gmail.com.ar",
         usuario: "pedro123",
         contraseña: "peDRO",
@@ -37,21 +37,21 @@ const db = {
         fotoDePerfil: "/images/users/user_mujer.jpg"
     },
     {
-        id: 5
+        id: 5,
         email: "thomas@gmail.com.ar",
         usuario: "thomas12",
         contraseña: "thomas",
         fechaDeNacimiento: "2000-05-10",
         nroDeDocumento: 40196253,
         fotoDePerfil: "/images/users/user_mujer.jpg"
-    },
-
+    }],
     
     
     
+    
 
 
-    producto: [
+    producto:[
         {
             id: 1,
             producto: "REMERA",
@@ -74,9 +74,8 @@ const db = {
                     id: 3,
                     nombreDeUsuario: "catalopez",
                     textoDelComentario: "preciosa esta prenda, me tiene fascinada!",
-                    imagenDePerfil: "foto"
+                    imagenDePerfil: "/images/users/user_mujer.jpg"
                 }
-                // Add more comments here if needed
             ]
         },
         {
@@ -95,12 +94,12 @@ const db = {
                     id: 5,
                     nombreDeUsuario: "catalopez",
                     textoDelComentario: "Me encantó el producto",
-                    imagenDePerfil: "foto"
+                    imagenDePerfil: "/images/users/user_mujer.jpg"
                 },
                { id: 6,
                     nombreDeUsuario: "catalopez",
                     textoDelComentario: "Me encantó el producto",
-                    imagenDePerfil: "foto"
+                    imagenDePerfil: "/images/users/user_mujer.jpg"
                },
               
         ]},
@@ -114,19 +113,19 @@ const db = {
                     id: 8,
                     nombreDeUsuario: "brisawaj",
                     textoDelComentario: "Me encantó el producto",
-                    imagenDePerfil: "foto"
+                    imagenDePerfil: "/images/users/user_mujer.jpg"
                 },
                 {
                     id: 9,
                     nombreDeUsuario: "brisawaj",
                     textoDelComentario: "Me encantó el producto",
-                    imagenDePerfil: "foto"
+                    imagenDePerfil: "/images/users/user_mujer.jpg"
                 },
                 {
                     id: 10,
                     nombreDeUsuario: "brisawaj",
                     textoDelComentario: "Me encantó el producto",
-                    imagenDePerfil: "foto"
+                    imagenDePerfil: "/images/users/user_mujer.jpg"
                 },
         ]},
         {
@@ -139,19 +138,19 @@ const db = {
                     id: 11,
                     nombreDeUsuario: "brisawaj",
                     textoDelComentario: "Me encantó el producto",
-                    imagenDePerfil: "foto"
+                    imagenDePerfil: "/images/users/user_mujer.jpg"
                 },
                 {
                     id: 12,
                     nombreDeUsuario: "brisawaj",
                     textoDelComentario: "Me encantó el producto",
-                    imagenDePerfil: "foto"
+                    imagenDePerfil: "/images/users/user_mujer.jpg"
                 },
                 {
                     id: 13,
                     nombreDeUsuario: "solorsi",
                     textoDelComentario: "Me encantó el producto",
-                    imagenDePerfil: "foto"
+                    imagenDePerfil: "/images/users/user_mujer.jpg"
                 },
         ]},
         {
@@ -164,19 +163,19 @@ const db = {
                     id: 14,
                     nombreDeUsuario: "solorsi",
                     textoDelComentario: "Me encantó el producto",
-                    imagenDePerfil: "foto"
+                    imagenDePerfil: "/images/users/user_mujer.jpg"
                 },
                 {
                     id: 15,
                     nombreDeUsuario: "solorsi",
                     textoDelComentario: "Me encantó el producto",
-                    imagenDePerfil: "foto"
+                    imagenDePerfil: "/images/users/user_mujer.jpg"
                 },
                 {
                     id: 16,
                     nombreDeUsuario: "solorsi",
                     textoDelComentario: "Me encantó el producto",
-                    imagenDePerfil: "foto"
+                    imagenDePerfil: "/images/users/user_mujer.jpg"
                 },
         ]},
         {
@@ -189,19 +188,19 @@ const db = {
                     id: 17,
                     nombreDeUsuario: "solorsi",
                     textoDelComentario: "Me encantó el producto",
-                    imagenDePerfil: "foto"
+                    imagenDePerfil: "/images/users/user_mujer.jpg"
                 },
                 {
                     id: 18,
                     nombreDeUsuario: "solorsi",
                     textoDelComentario: "Me encantó el producto",
-                    imagenDePerfil: "foto"
+                    imagenDePerfil: "/images/users/user_mujer.jpg"
                 },
                 {
                     id: 19,
                     nombreDeUsuario: "pedro123",
                     textoDelComentario: "Me encantó el producto",
-                    imagenDePerfil: "foto"
+                    imagenDePerfil: "/images/users/user_hombre.png"
                 },
         ]},
         {
@@ -214,19 +213,19 @@ const db = {
                     id: 20,
                     nombreDeUsuario: "pedro123",
                     textoDelComentario: "Me encantó el producto",
-                    imagenDePerfil: "foto"
+                    imagenDePerfil: "/images/users/user_hombre.png"
                 },
                 {
                     id: 21,
                     nombreDeUsuario: "pedro123",
                     textoDelComentario: "Me encantó el producto",
-                    imagenDePerfil: "foto"
+                    imagenDePerfil: "/images/users/user_hombre.png"
                 },
                 {
                     id: 22,
                     nombreDeUsuario: "pedro123",
                     textoDelComentario: "Me encantó el producto",
-                    imagenDePerfil: "foto"
+                    imagenDePerfil: "/images/users/user_hombre.png"
                 },
         ]},
         {
@@ -239,20 +238,21 @@ const db = {
                     id: 23,
                     nombreDeUsuario: "pedro123",
                     textoDelComentario: "Me encantó el producto",
-                    imagenDePerfil: "foto"
+                    imagenDePerfil: "/images/users/user_hombre.png"
                 },
                 {
                     id: 24,
                     nombreDeUsuario: "pedro123",
                     textoDelComentario: "demasiado altos, pero son lindos",
-                    imagenDePerfil: "foto"
+                    imagenDePerfil: "/images/users/user_hombre.png"
                 },
                 {
                     id: 30,
                     nombreDeUsuario: "thomas12",
                     textoDelComentario: "bonitos tacos",
-                    imagenDePerfil: "foto"
-                },
+                    imagenDePerfil: "/images/users/user_hombre.png"
+            }
+        ]},
         {
             id: 9,
             producto: "CARTERA",
@@ -263,19 +263,19 @@ const db = {
                     id: 25,
                     nombreDeUsuario: "thomas12",
                     textoDelComentario: "Me encantó el producto",
-                    imagenDePerfil: "foto"
+                    imagenDePerfil: "/images/users/user_hombre.png"
                 },
                 {
                     id: 26,
                     nombreDeUsuario: "thomas12",
                     textoDelComentario: "tal cual la foto, una belleza",
-                    imagenDePerfil: "foto"
+                    imagenDePerfil: "/images/users/user_hombre.png"
                 },
                 {
                     id: 27,
                     nombreDeUsuario: "thomas12",
                     textoDelComentario: "cartera hermosa",
-                    imagenDePerfil: "foto"
+                    imagenDePerfil: "/images/users/user_hombre.png"
                 },
 
         ]},
