@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-	<title> Mercado Liebre Argentina</title>
+	<title> Estilo</title>
 	<!-- Font Awesome Stylesheet -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 	<!-- Bootstrap Grid Stylesheet -->
@@ -68,12 +68,12 @@
 						<section class="product-box">
 							<a href="product.html">
 								<figure class="product-box_image">
-									<img src="images/products/default-image.png" alt="cafetera moulinex">
+									<img src="<%= productos[0].imagen %>" alt="cafetera moulinex">
 								</figure>
 								<article class="product-box_data">
-									<h2>Nombre del producto</h2>
-									<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque delectus ex</p>
-									<p>Comentarios: 12</p>
+									<h2><%=productos[0].producto %></h2>
+									<p><%= productos[0].descripcion %></p>
+									<p>Comentarios: <%= productos[0].comentarios.length %></p>
 								</article>
 							</a>
 						</section>
@@ -82,12 +82,12 @@
 						<section class="product-box">
 							<a href="product.html">
 								<figure class="product-box_image">
-									<img src="images/products/default-image.png" alt="cafetera moulinex">
+									<img src="<%= productos[1].imagen %>" alt="cafetera moulinex">
 								</figure>
 								<article class="product-box_data">
-									<h2>Nombre del producto</h2>
-									<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque delectus ex</p>
-									<p>Comentarios: 12</p>
+									<h2><%=productos[1].producto %></h2>
+									<p><%= productos[1].descripcion %></p>
+									<p>Comentarios: <%= productos[1].comentarios.length %></p>
 								</article>
 							</a>
 						</section>
@@ -96,12 +96,12 @@
 						<section class="product-box">
 							<a href="product.html">
 								<figure class="product-box_image">
-									<img src="images/products/default-image.png" alt="cafetera moulinex">
+									<img src="<%= productos[8].imagen %>" alt="cafetera moulinex">
 								</figure>
 								<article class="product-box_data">
-									<h2>Nombre del producto</h2>
-									<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque delectus ex</p>
-									<p>Comentarios: 12</p>
+									<h2><%=productos[8].producto %></h2>
+									<p><%= productos[8].descripcion %></p>
+									<p>Comentarios: <%= productos[8].comentarios.length %></p>
 								</article>
 							</a>
 						</section>
@@ -110,12 +110,12 @@
 						<section class="product-box">
 							<a href="product.html">
 								<figure class="product-box_image">
-									<img src="images/products/default-image.png" alt="cafetera moulinex">
+									<img src="<%= productos[3].imagen %>" alt="cafetera moulinex">
 								</figure>
 								<article class="product-box_data">
-									<h2>Nombre del producto</h2>
-									<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque delectus ex</p>
-									<p>Comentarios: 12</p>
+									<h2><%=productos[3].producto %></h2>
+									<p><%= productos[3].descripcion %></p>
+									<p>Comentarios: <%= productos[3].comentarios.length %></p>
 								</article>
 							</a>
 						</section>
