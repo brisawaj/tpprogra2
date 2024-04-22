@@ -46,12 +46,12 @@
 				<section class="product-box">
 					<a href="product.html">
 						<figure class="product-box_image">
-							<img src="images/products/default-image.png" alt="cafetera moulinex">
+							<img src= "<%= productos[0].imagen %>" alt="cafetera moulinex">
 						</figure>
 						<article class="product-box_data">
-							<h2>Nombre del producto</h2>
-							<p>Descripción corta del producto Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque delectus ex</p>
-							<p>Comentarios: 12</p>
+							<h2> <%= productos[0].producto %> </h2>
+							<p> <%= productos[0].descripcion %></p>
+							<p>Comentarios: <%= productos[0].comentarios.length %></p>
 						</article>
 					</a>
 				</section>

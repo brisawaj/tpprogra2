@@ -26,7 +26,9 @@ const productController = {
         return res.render("search-results")
     },
     productAdd: function (req, res) {
-        return res.render("productAdd")
+        return res.render("productAdd", {
+            usuario: db.usuario
+        })
     },
  }
     
