@@ -2,19 +2,9 @@
 <html lang="es">
 <!-- Include Head -->
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link width="" rel="shortcut icon" href="./images/logo-mercado-liebre.jpg" />
+<%- include('./partials/head') %>
 
-	<title> Mercado Liebre Argentina</title>
-	<!-- Font Awesome Stylesheet -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-	<!-- Bootstrap Grid Stylesheet -->
-	<link rel="stylesheet" href="./css/bootstrap-grid.min.css">
-	<!-- Own Stylesheet -->
-	<link rel="stylesheet" href="./css/app.css">
-</head>
+
 
 <body>
 	<%- include('./partials/headerLogueado') %>
@@ -26,7 +16,7 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12">
-				<form action="/product/productAdd" method="GET">
+				<form action="/users/profile" method="GET">
 					<label for="image">Imagen:</label>
 					<input type="file" id="image" name="image" placeholder="Escribe la URL" ><br><br>
 				
@@ -37,7 +27,7 @@
 					<textarea id="description" name="description" placeholder="Descripcion del producto"></textarea><br><br>
 				
 					<input type="submit" value="CREAR" class="button">
-				  </form>
+				</form>
 			<%- include('./partials/footer') %>
 
 </body>
