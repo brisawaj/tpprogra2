@@ -1,13 +1,55 @@
 const db = {
     usuario:
     {
+        id: 1
         email: "catalopez@gmail.com",
         usuario: "catalopez",
         contraseña: "cata123",
         fechaDeNacimiento: "2000-05-10",
         nroDeDocumento: 40196253,
-        fotoDePerfil: "foto"
+        fotoDePerfil: "/images/users/user_mujer.jpg"
     },
+    {
+        id: 2
+        email: "brisa@gmail.com.ar",
+        usuario:"brisawaj",
+        contraseña:"briSA",
+        fechaDeNacimiento:"2000-05-10",
+        nroDeDocumento: "46026883",
+        fotoDePerfil: "/images/users/user_mujer.jpg"
+    },
+    {
+        id: 3
+        email: "sol@gmail.com.ar",
+        usuario: "solorsi",
+        contraseña: "Sol",
+        fechaDeNacimiento: "2000-05-10",
+        nroDeDocumento: 40196253,
+        fotoDePerfil: "/images/users/user_mujer.jpg"
+    },
+    {
+        id: 4
+        email: "pedro@gmail.com.ar",
+        usuario: "pedro123",
+        contraseña: "peDRO",
+        fechaDeNacimiento: "2000-05-10",
+        nroDeDocumento: 40196253,
+        fotoDePerfil: "/images/users/user_mujer.jpg"
+    },
+    {
+        id: 5
+        email: "thomas@gmail.com.ar",
+        usuario: "thomas12",
+        contraseña: "thomas",
+        fechaDeNacimiento: "2000-05-10",
+        nroDeDocumento: 40196253,
+        fotoDePerfil: "/images/users/user_mujer.jpg"
+    },
+    
+    
+    
+    
+
 
     producto: [
         {
@@ -18,16 +60,22 @@ const db = {
             comentarios: [
                 {
                     id: 1,
-                    nombreDeUsuario: "sofiamartinez",
-                    textoDelComentario: "Me encantó el producto",
-                    imagenDePerfil: "foto"
+                    nombreDeUsuario: "catalopez",
+                    textoDelComentario: "Me encanto la remera!",
+                    imagenDePerfil: "/images/users/user_mujer.jpg"
                 },
                 {
                     id: 2,
-                    nombreDeUsuario: "sofiamartinez",
-                    textoDelComentario: "Me encantó el producto",
-                    imagenDePerfil: "foto"
+                    nombreDeUsuario: "catalopez",
+                    textoDelComentario: "Hermosa remera, se adapta super bien.",
+                    imagenDePerfil: "/images/users/user_mujer.jpg"
                 },
+                {
+                    id: 3,
+                    nombreDeUsuario: "catalopez",
+                    textoDelComentario: "preciosa esta prenda, me tiene fascinada!",
+                    imagenDePerfil: "foto"
+                }
                 // Add more comments here if needed
             ]
         },
@@ -38,11 +86,23 @@ const db = {
             imagen: "images/products/id-2.jpg",
             comentarios: [
                 {
-                    id: 1,
-                    nombreDeUsuario: "sofiamartinez",
+                    id: 4,
+                    nombreDeUsuario: "catalopez",
                     textoDelComentario: "Me encantó el producto",
                     imagenDePerfil: "foto"
                 },
+                {
+                    id: 5,
+                    nombreDeUsuario: "catalopez",
+                    textoDelComentario: "Me encantó el producto",
+                    imagenDePerfil: "foto"
+                },
+               { id: 6,
+                    nombreDeUsuario: "catalopez",
+                    textoDelComentario: "Me encantó el producto",
+                    imagenDePerfil: "foto"
+               },
+              
         ]},
         {
             id: 3,
@@ -51,8 +111,20 @@ const db = {
             imagen: "images/products/id-3.jpeg",
             comentarios: [
                 {
-                    id: 1,
-                    nombreDeUsuario: "sofiamartinez",
+                    id: 8,
+                    nombreDeUsuario: "brisawaj",
+                    textoDelComentario: "Me encantó el producto",
+                    imagenDePerfil: "foto"
+                },
+                {
+                    id: 9,
+                    nombreDeUsuario: "brisawaj",
+                    textoDelComentario: "Me encantó el producto",
+                    imagenDePerfil: "foto"
+                },
+                {
+                    id: 10,
+                    nombreDeUsuario: "brisawaj",
                     textoDelComentario: "Me encantó el producto",
                     imagenDePerfil: "foto"
                 },
@@ -64,8 +136,20 @@ const db = {
             imagen: "images/products/id-4.webp",
             comentarios: [
                 {
-                    id: 1,
-                    nombreDeUsuario: "sofiamartinez",
+                    id: 11,
+                    nombreDeUsuario: "brisawaj",
+                    textoDelComentario: "Me encantó el producto",
+                    imagenDePerfil: "foto"
+                },
+                {
+                    id: 12,
+                    nombreDeUsuario: "brisawaj",
+                    textoDelComentario: "Me encantó el producto",
+                    imagenDePerfil: "foto"
+                },
+                {
+                    id: 13,
+                    nombreDeUsuario: "solorsi",
                     textoDelComentario: "Me encantó el producto",
                     imagenDePerfil: "foto"
                 },
@@ -77,8 +161,20 @@ const db = {
             imagen: "images/products/id-5.jpeg",
             comentarios: [
                 {
-                    id: 1,
-                    nombreDeUsuario: "sofiamartinez",
+                    id: 14,
+                    nombreDeUsuario: "solorsi",
+                    textoDelComentario: "Me encantó el producto",
+                    imagenDePerfil: "foto"
+                },
+                {
+                    id: 15,
+                    nombreDeUsuario: "solorsi",
+                    textoDelComentario: "Me encantó el producto",
+                    imagenDePerfil: "foto"
+                },
+                {
+                    id: 16,
+                    nombreDeUsuario: "solorsi",
                     textoDelComentario: "Me encantó el producto",
                     imagenDePerfil: "foto"
                 },
@@ -90,8 +186,20 @@ const db = {
             imagen: "images/products/id-6.webp",
             comentarios: [
                 {
-                    id: 1,
-                    nombreDeUsuario: "sofiamartinez",
+                    id: 17,
+                    nombreDeUsuario: "solorsi",
+                    textoDelComentario: "Me encantó el producto",
+                    imagenDePerfil: "foto"
+                },
+                {
+                    id: 18,
+                    nombreDeUsuario: "solorsi",
+                    textoDelComentario: "Me encantó el producto",
+                    imagenDePerfil: "foto"
+                },
+                {
+                    id: 19,
+                    nombreDeUsuario: "pedro123",
                     textoDelComentario: "Me encantó el producto",
                     imagenDePerfil: "foto"
                 },
@@ -103,8 +211,20 @@ const db = {
             imagen: "images/products/id-7.jpg",
             comentarios: [
                 {
-                    id: 1,
-                    nombreDeUsuario: "sofiamartinez",
+                    id: 20,
+                    nombreDeUsuario: "pedro123",
+                    textoDelComentario: "Me encantó el producto",
+                    imagenDePerfil: "foto"
+                },
+                {
+                    id: 21,
+                    nombreDeUsuario: "pedro123",
+                    textoDelComentario: "Me encantó el producto",
+                    imagenDePerfil: "foto"
+                },
+                {
+                    id: 22,
+                    nombreDeUsuario: "pedro123",
                     textoDelComentario: "Me encantó el producto",
                     imagenDePerfil: "foto"
                 },
@@ -116,12 +236,23 @@ const db = {
             imagen: "images/products/id-8.jpg",
             comentarios: [
                 {
-                    id: 1,
-                    nombreDeUsuario: "sofiamartinez",
+                    id: 23,
+                    nombreDeUsuario: "pedro123",
                     textoDelComentario: "Me encantó el producto",
                     imagenDePerfil: "foto"
                 },
-        ]},
+                {
+                    id: 24,
+                    nombreDeUsuario: "pedro123",
+                    textoDelComentario: "demasiado altos, pero son lindos",
+                    imagenDePerfil: "foto"
+                },
+                {
+                    id: 30,
+                    nombreDeUsuario: "thomas12",
+                    textoDelComentario: "bonitos tacos",
+                    imagenDePerfil: "foto"
+                },
         {
             id: 9,
             producto: "CARTERA",
@@ -129,11 +260,24 @@ const db = {
             imagen: "images/products/id-9.webp",
             comentarios: [
                 {
-                    id: 1,
-                    nombreDeUsuario: "sofiamartinez",
+                    id: 25,
+                    nombreDeUsuario: "thomas12",
                     textoDelComentario: "Me encantó el producto",
                     imagenDePerfil: "foto"
                 },
+                {
+                    id: 26,
+                    nombreDeUsuario: "thomas12",
+                    textoDelComentario: "tal cual la foto, una belleza",
+                    imagenDePerfil: "foto"
+                },
+                {
+                    id: 27,
+                    nombreDeUsuario: "thomas12",
+                    textoDelComentario: "cartera hermosa",
+                    imagenDePerfil: "foto"
+                },
+
         ]},
         {
             id: 10,
@@ -141,12 +285,24 @@ const db = {
             descripcion: "collar de oro nuevo",
             imagen: "images/products/id-10.jpg",
             comentarios: [
-                {
-                    id: 1,
-                    nombreDeUsuario: "sofiamartinez",
-                    textoDelComentario: "Me encantó el producto",
+               {
+                    id: 28,
+                    nombreDeUsuario: "thomas12",
+                    textoDelComentario: "Me encantó el collar",
                     imagenDePerfil: "foto"
                 },
+                {
+                    id: 29,
+                    nombreDeUsuario: "thomas12",
+                    textoDelComentario: "bonito collar",
+                    imagenDePerfil: "foto"
+                },
+                {id: 7,
+                    nombreDeUsuario: "brisawaj",
+                    textoDelComentario: "Me encantó el producto",
+                    imagenDePerfil: "foto"
+               
+               }
         ]},
     ]
 }
