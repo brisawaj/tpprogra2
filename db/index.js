@@ -6,7 +6,7 @@ const db = {
         contraseña: "cata123",
         fechaDeNacimiento: "2000-05-10",
         nroDeDocumento: 40196253,
-        fotoDePerfil: "foto"
+        fotoDePerfil: "/images/users/user_mujer.jpg"
     },
 
     producto: [
