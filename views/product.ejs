@@ -34,8 +34,16 @@
 							</article>
 						</section>
 						<% } %>
-					<form class="form" action="" method="POST">
-						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
+					<form class="form" action="/users/profile" method="GET">
+						<label for="name">Usuario:</label>
+						<input type="text" id="name" name="name" placeholder="Nombre de usuario"><br><br>
+
+						<label for="coment">Comentario:</label>
+						<input type="text" id="coment" name="coment" placeholder="Comentario"><br><br>
+
+						<label for="image">Imagen de perfil:</label>
+						<input type="file" id="image" name="image" placeholder="Escribe la URL" ><br><br>
+						
 						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
 					</form>
 					<hr>

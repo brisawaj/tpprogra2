@@ -6,7 +6,7 @@ const db = {
         contraseña: "cata123",
         fechaDeNacimiento: "2000-05-10",
         nroDeDocumento: 40196253,
-        fotoDePerfil: "foto"
+        fotoDePerfil: "images/users/userMujer.jpg"
     },
 
     producto: [
@@ -20,7 +20,7 @@ const db = {
                     id: 1,
                     nombreDeUsuario: "sofiamartinez",
                     textoDelComentario: "Me encantó el producto",
-                    imagenDePerfil: "foto"
+                    imagenDePerfil: "images/users/userMujer.jpg"
                 },
                 {
                     id: 2,
