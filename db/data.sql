@@ -83,7 +83,7 @@ INSERT INTO comentarios (id, usuario_id, products_id, comentario, createdAt, upd
 INSERT INTO comentarios (id, usuario_id, products_id, comentario, createdAt, updatedAt, deletedAt) VALUES (21, 4, 7 ,"me encanto el producto", NULL, NULL, NULL),
 INSERT INTO comentarios (id, usuario_id, products_id, comentario, createdAt, updatedAt, deletedAt) VALUES (22, 4, 7 ,"me encanto el producto", NULL, NULL, NULL),
 INSERT INTO comentarios (id, usuario_id, products_id, comentario, createdAt, updatedAt, deletedAt) VALUES (23, 4, 8 ,"me encanto el producto", NULL, NULL, NULL),
-INSERT INTO comentarios (id, usuario_id, products_id, comentario, createdAt, updatedAt, deletedAt) VALUES (24, 4, 8 ,"demasiado altos, pero son lindos", NULL, NULL, NULL),
+INSERT INTO comentarios (id, usuario_id, products_id, comentario, createdAt, updatedAt, deletedAt) VALUES (24, 4, 8 ,"demasiado altos, pero son lindos ", NULL, NULL, NULL),
 INSERT INTO comentarios (id, usuario_id, products_id, comentario, createdAt, updatedAt, deletedAt) VALUES (30, 5, 8 ,"bonitos tacos ", NULL, NULL, NULL),
 INSERT INTO comentarios (id, usuario_id, products_id, comentario, createdAt, updatedAt, deletedAt) VALUES (25, 5, 9 ,"me encanto el producto", NULL, NULL, NULL),
 INSERT INTO comentarios (id, usuario_id, products_id, comentario, createdAt, updatedAt, deletedAt) VALUES (26, 5, 9 ,"tal cual la foto, una belleza", NULL, NULL, NULL),
