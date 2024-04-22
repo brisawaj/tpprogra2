@@ -60,15 +60,12 @@ const db = {
             comentarios: [
                 {
                     id: 1,
-<<<<<<< HEAD
                     nombreDeUsuario: "sofiamartinez",
                     textoDelComentario: "Me encantó el producto",
-                    imagenDePerfil: "images/users/userMujer.jpg"
-=======
+                    imagenDePerfil: "images/users/userMujer.jpg",
                     nombreDeUsuario: "catalopez",
                     textoDelComentario: "Me encanto la remera!",
                     imagenDePerfil: "/images/users/user_mujer.jpg"
->>>>>>> 5ac9e133b1c5cba911a1d7fc300bc9daa6947993
                 },
                 {
                     id: 2,
