@@ -12,7 +12,7 @@ const db = {
     producto: [
         {
             id: 1,
-            producto: "remera",
+            producto: "REMERA",
             descripcion: "remera negra nueva, estampado en color rojo",
             imagen: "images/products/id-1.jpg",
             comentarios: [
@@ -33,7 +33,7 @@ const db = {
         },
         {
             id: 2,
-            producto: "short",
+            producto: "SHORT",
             descripcion: "short azul nuevo",
             imagen: "images/products/id-2.jpg",
             comentarios: [
@@ -46,9 +46,9 @@ const db = {
         ]},
         {
             id: 3,
-            producto: "buzo",
+            producto: "BUZO",
             descripcion: "buzo talle 13",
-            imagen: "foto",
+            imagen: "images/products/id-3.jpeg",
             comentarios: [
                 {
                     id: 1,
@@ -59,9 +59,9 @@ const db = {
         ]},
         {
             id: 4,
-            producto: "jean",
+            producto: "JEAN",
             descripcion: "jean en perfecto estado",
-            imagen: "foto",
+            imagen: "images/products/id-4.webp",
             comentarios: [
                 {
                     id: 1,
@@ -72,9 +72,9 @@ const db = {
         ]},
         {
             id: 5,
-            producto: "sweater",
+            producto: "SWEATER",
             descripcion: "sweater talle s nuevo",
-            imagen: "foto",
+            imagen: "images/products/id-5.jpeg",
             comentarios: [
                 {
                     id: 1,
@@ -85,9 +85,9 @@ const db = {
         ]},
         {
             id: 6,
-            producto: "jean negro",
+            producto: "JEAN NEGRO",
             descripcion: "jean nuevo importado",
-            imagen: "foto",
+            imagen: "images/products/id-6.webp",
             comentarios: [
                 {
                     id: 1,
@@ -98,9 +98,9 @@ const db = {
         ]},
         {
             id: 7,
-            producto: "zapatillas",
+            producto: "ZAPATILLAS",
             descripcion: "zapatillas nuevas talle 39",
-            imagen: "foto",
+            imagen: "images/products/id-7.jpg",
             comentarios: [
                 {
                     id: 1,
@@ -111,9 +111,9 @@ const db = {
         ]},
         {
             id: 8,
-            producto: "tacos",
+            producto: "TACOS",
             descripcion: "tacos altos importados",
-            imagen: "foto",
+            imagen: "images/products/id-8.jpg",
             comentarios: [
                 {
                     id: 1,
@@ -124,9 +124,9 @@ const db = {
         ]},
         {
             id: 9,
-            producto: "cartera",
+            producto: "CARTERA",
             descripcion: "cartera espaciosa nueva",
-            imagen: "foto",
+            imagen: "images/products/id-9.webp",
             comentarios: [
                 {
                     id: 1,
@@ -137,9 +137,9 @@ const db = {
         ]},
         {
             id: 10,
-            producto: "collar",
+            producto: "COLLAR",
             descripcion: "collar de oro nuevo",
-            imagen: "foto",
+            imagen: "images/products/id-10.jpg",
             comentarios: [
                 {
                     id: 1,
