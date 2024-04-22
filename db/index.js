@@ -1,5 +1,3 @@
-
-
 const db = {
     usuario:[
     {
@@ -9,8 +7,7 @@ const db = {
         contraseña: "cata123",
         fechaDeNacimiento: "2000-05-10",
         nroDeDocumento: 40196253,
-        fotoDePerfil: "/images/users/userMujer.jpg"
-    },
+        fotoDePerfil: "/images/users/user_mujer.jpg"},
     {
         id: 2,
         email: "brisa@gmail.com.ar",
