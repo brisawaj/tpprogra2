@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
 <!-- Include Head -->
-
 <%- include('./partials/head') %>
 
 
 <body>
+	<!DOCTYPE html>
+<html lang="es">
+<body>
+	<!-- Header -->
 	<%- include('./partials/headerLogueado') %>
+	<!-- /Header -->
+	
+</body>	
+</html>
 
 	<!-- Novedades -->
 	<div class="container products-wrapper">
@@ -16,7 +23,7 @@
 			</div>
 			<!-- formulario -->
 			<h2 class="col-12">
-				<form action="/users/login" method="GET">
+				<form action="/users/profile" method="GET">
 					<label for="email">Usuario:</label>
 					<input type="text" id="email" name="email" ><br><br>
 					

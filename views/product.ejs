@@ -24,10 +24,10 @@
 					<%for (var index=0; index < producto.comentarios.length; index++ ){%>
 						<section class="comments">
 							<article>
-								<img src="https://via.placeholder.com/35" alt="">
+								<img src="<%= producto.comentarios[index].imagenDePerfil %>" alt="">
 								<div class="data">
 									<p class="user">
-									<strong> <a href="/users/id/<%= producto.comentarios[index].id %>" ="profile.html">Nombre usuario: </a> </strong>
+									<strong> <a href="/users/id/<%= producto.comentarios[index].id %>" ="profile.html"><%= producto.comentarios[index].nombreDeUsuario %> :</a> </strong>
 										<%= producto.comentarios[index].textoDelComentario %>
 									 </p>
 								</div>
@@ -36,13 +36,10 @@
 						<% } %>
 					<form class="form" action="/users/profile" method="GET">
 						<label for="name">Usuario:</label>
-						<input type="text" id="name" name="name" placeholder="Nombre de usuario"><br><br>
+						<input type="text" id="name" name="name" placeholder="Nombre de usuario"><br />
 
 						<label for="coment">Comentario:</label>
-						<input type="text" id="coment" name="coment" placeholder="Comentario"><br><br>
-
-						<label for="image">Imagen de perfil:</label>
-						<input type="file" id="image" name="image" placeholder="Escribe la URL" ><br><br>
+						<input type="text" id="coment" name="coment" placeholder="Comentario"><br />
 						
 						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
 					</form>
