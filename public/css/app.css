@@ -71,10 +71,13 @@ hr {
   background-color: dimgray;
 }
 
+.main-header_home-link {
+  width: 100px;
+}
+
 .main-header_home-link,
 .main-header_credit-link {
   display: block;
-  background-color: transparent;
 }
 
 .main-header_credit-link {
