@@ -23,7 +23,7 @@ const productController = {
         });  
     },
     search: function (req, res) {
-        return res.render("search-results")
+        return res.render("search-results", { usuario: db.usuario, productos: db.producto })
     },
     productAdd: function (req, res) {
         return res.render("productAdd", { usuario: db.usuario, productos: db.producto })
