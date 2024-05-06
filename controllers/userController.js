@@ -1,5 +1,5 @@
 const db = require('../db/index')
-const db = require("../database/models/User")
+const User = require("../database/models/User")
 
 const userController = {
     
