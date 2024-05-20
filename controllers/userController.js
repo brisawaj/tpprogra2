@@ -19,7 +19,15 @@ const userController = {
     },
     
     register: function(req, res) {
-        return res.render('register')
+        User.usuario.create({
+            emailUsuario: req.body.email,
+            nombreUsuario: req.body.username,
+            contraUsuario: req.body.password,
+            cumpleUsuario: req.body.birthdate,
+            dniUsuario: req.body.dni,
+            perfilUsuario: req.body.perfil
+        })
+        return res.redirect('/users/profile')
     },
 
     newUser: function(req, res) {
