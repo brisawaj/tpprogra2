@@ -39,5 +39,12 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+//session
+let session = require ("express-session")
+app.use(session({
+        secret: "productsdb",
+        resave: false,
+        saveUninitialized: true,
+})) 
 
 module.exports = app;
