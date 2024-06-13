@@ -1,5 +1,5 @@
-const db = require('../db/index')
-const User = require("../database/models/User")
+cd const anterior = require('../db/index')
+const db = require("../database/models")
 
 const userController = {
     
@@ -19,24 +19,59 @@ const userController = {
     },
     
     register: function(req, res) {
-        User.usuario.create({
-            emailUsuario: req.body.email,
-            nombreUsuario: req.body.username,
-            contraUsuario: req.body.password,
-            cumpleUsuario: req.body.birthdate,
-            dniUsuario: req.body.dni,
-            perfilUsuario: req.body.perfil
-        })
-        return res.redirect('/users/profile')
+        return res.render("register")
     },
 
-    newUser: function(req, res) {
-        return res.render('register')
+    registerStore: function(req, res) {
+        db.User.create({
+            email: req.body.email,
+            contra: req.body.password,
+            fecha: req.body.birthdate,
+            dni: req.body.dni,
+            imagen: req.body.perfil
+        })
+        .then (function(result){
+            return res.redirect ('/profile')
+        }).catch ((error) => {
+            console.log(error);
+            return res.render('register')
+        })
     },
 
     login: function(req, res) {
         return res.render('login')
     },
+
+    loginProcess: function (req, res) {
+        let email= req.body.email
+        let contra= req.body.password
+        db.User.findOne({ where: { email: email } })
+    },
+    //         .then(function(){
+
+    //         })
+    //         .catch(function(){
+
+    //         })
+
+
+
+
+    //         const {email} = req.body;
+          
+    //         try {
+    //           const existingUser = await User.findOne({ where: { emailUsuario: email } });
+          
+    //           if (existingUser) {
+    //             return res.redirect('profile');
+    //           } else {
+    //             return res.render ('login')}
+    //         }.catch  ((error) => {
+    //             console.log(error);
+    //             return res.render('login')
+    //         })
+    //       },
+
     profile: function(req, res) {
         console.log(db.producto)
         return res.render('profile' , { usuario: db.usuario, productos: db.producto })
