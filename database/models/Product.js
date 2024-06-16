@@ -26,11 +26,23 @@ module.exports = function(sequelize, dataTypes){
     let config = {
         tableName: "products",
         timestamps: true,
-        underscored: true
+        underscored: false
 
     }
 
-    let Product = sequelize.define(alias, cols, config)
-    return Product
 
+    let Product = sequelize.define(alias, cols, config)
+    Product.associate= function(models){
+        Product.belongsTo(models.User,{
+          //configuracion de la relacion
+          as:"vendedor" , 
+          foreignKey: "usuario_id" //linea 26
+        },
+        Product.hasMany(models.Comentario,{
+            as:"cometarios",
+            foreignKey: "id"
+        })
+    )
+}
+    return Product
 }

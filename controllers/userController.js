@@ -1,4 +1,4 @@
-cd const anterior = require('../db/index')
+ const anterior = require('../db/index')
 const db = require("../database/models")
 
 const userController = {

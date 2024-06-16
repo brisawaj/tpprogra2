@@ -19,6 +19,7 @@ const productController = {
                 });
             }
         }
+        
         return res.render('product', {
             producto: producto
         });  
