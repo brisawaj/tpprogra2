@@ -1,6 +1,5 @@
 const db = require("../db/index");
 const modelos= require("../database/models");
-const { Association } = require("sequelize");
 
 const indexController = {
 

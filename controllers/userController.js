@@ -1,11 +1,10 @@
  const anterior = require('../db/index')
 const db = require("../database/models")
 
+
 const userController = {
     
-    index: function (req, res) {
-        return res.render("index")
-    },
+
 
     filterById: function (req, res) {
        
@@ -74,7 +73,19 @@ const userController = {
 
     profile: function(req, res) {
         console.log(db.producto)
-        return res.render('profile' , { usuario: db.usuario, productos: db.producto })
+        db.User.findOne({
+            where: [{id: req.params.id}],
+            include:[{association: "productos"}],
+            order:[["createdAt", "DESC"]]  
+        })
+        .then((resultado)=>{
+        //return res.send(resultado)
+         return res.render('profile' , { usuario: resultado, productos: resultado.productos })
+            
+            
+            })
+
+        
     },
     profileEdit: function(req, res) {
         return res.render('profileEdit', { usuario: db.usuario, productos: db.producto })
