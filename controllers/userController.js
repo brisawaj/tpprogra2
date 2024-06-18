@@ -1,11 +1,9 @@
- const anterior = require('../db/index')
-const db = require("../database/models")
-
+const {validationResult} = require('express-validator');
+const anterior = require('../db/index');
+const db = require("../database/models");
+const bcrypt = require ('bcryptjs')
 
 const userController = {
-    
-
-
     filterById: function (req, res) {
        
         return res.render('product', {
@@ -22,9 +20,10 @@ const userController = {
     },
 
     registerStore: function(req, res) {
+        let passEncriptada = bcrypt.hashSync (req.body.password, 10);
         db.User.create({
             email: req.body.email,
-            contra: req.body.password,
+            contra: passEncriptada,
             fecha: req.body.birthdate,
             dni: req.body.dni,
             imagen: req.body.perfil
@@ -38,52 +37,46 @@ const userController = {
     },
 
     login: function(req, res) {
-        return res.render('login')
+        return res.render('login', { errorMessage: null })
     },
 
+    
     loginProcess: function (req, res) {
-        let email= req.body.email
-        let contra= req.body.password
-        db.User.findOne({ where: { email: email } })
+        let errors = validationResult (req);
+        let email= req.body.email;
+        let password = req.body.password;
+        db.User.findOne({
+            where: { email: email },
+            include: [{ association: "productos" }],
+            order: [["createdAt", "DESC"]]
+        })
+        .then((resultado) => {
+            if (!resultado) {
+                return res.render('login', { errorMessage: 'Correo electrónico no encontrado' });
+            }
+    
+            // Comparar la contraseña proporcionada con el hash almacenado en la base de datos
+            if (!bcrypt.compareSync(password, resultado.password)) {
+                return res.render('login', { errorMessage: 'Contraseña incorrecta' });
+            } else {
+                return res.render('profile', { usuario: resultado, productos: resultado.productos });
+            }
+        })
+        .catch((error) => {
+            console.log(error);
+            return res.render('login', { errorMessage: 'Error interno del servidor' });
+        })
     },
-    //         .then(function(){
-
-    //         })
-    //         .catch(function(){
-
-    //         })
-
-
-
-
-    //         const {email} = req.body;
-          
-    //         try {
-    //           const existingUser = await User.findOne({ where: { emailUsuario: email } });
-          
-    //           if (existingUser) {
-    //             return res.redirect('profile');
-    //           } else {
-    //             return res.render ('login')}
-    //         }.catch  ((error) => {
-    //             console.log(error);
-    //             return res.render('login')
-    //         })
-    //       },
-
+    
     profile: function(req, res) {
-        console.log(db.producto)
         db.User.findOne({
             where: [{id: req.params.id}],
             include:[{association: "productos"}],
             order:[["createdAt", "DESC"]]  
         })
         .then((resultado)=>{
-        //return res.send(resultado)
-         return res.render('profile' , { usuario: resultado, productos: resultado.productos })
-            
-            
-            })
+        return res.render('profile' , { usuario: resultado, productos: resultado.productos })
+        })
 
         
     },

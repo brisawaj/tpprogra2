@@ -41,24 +41,24 @@ FOREIGN KEY (products_id) REFERENCES products (id)
 
 # Insertamos 5 usuarios
 INSERT INTO usuario (id ,email ,contra ,fecha ,dni, imagen, createdAt, updatedAt, deletedAt)
-VALUES (1, "catalopez@gmail.com", "cata123","2010-04-11", "40196253", "/images/users/user_mujer.jpg", NULL,  NULL, NULL), 
-(2, "brisa@gmail.com.ar", "briSA","2010-04-11", "46026883", "/images/users/user_mujer.jpg", NULL,  NULL, NULL),
-(3, "sol@gmail.com.ar", "Sol","2010-04-11", "12345678", "/images/users/user_mujer.jpg", NULL,   NULL, NULL),
-(4, "pedro@gmail.com.ar", "peDRO","2010-04-11", "46037883", "/images/users/user_mujer.jpg", NULL,   NULL, NULL),
-(5, "thomas@gmail.com.ar", "Thomas","2010-04-11", "43026883", "/images/users/user_mujer.jpg", NULL,   NULL, NULL);
+VALUES (1, "catalopez@gmail.com", "cata123","2010-04-11", "40196253", "../public/images/users/user_mujer.jpg", NULL,  NULL, NULL), 
+(2, "brisa@gmail.com.ar", "briSA","2010-04-11", "46026883", "../public/images/users/user_mujer.jpg", NULL,  NULL, NULL),
+(3, "sol@gmail.com.ar", "Sol","2010-04-11", "12345678", "../public/images/users/user_mujer.jpg", NULL,   NULL, NULL),
+(4, "pedro@gmail.com.ar", "peDRO","2010-04-11", "46037883", "../public/images/users/user_mujer.jpg", NULL,   NULL, NULL),
+(5, "thomas@gmail.com.ar", "Thomas","2010-04-11", "43026883", "../public/images/users/user_mujer.jpg", NULL,   NULL, NULL);
 
  
 # Insertamos 10 productos
-INSERT INTO products (id, usuario_id, imagen, nombre_producto, descripcion_producto, createdAt, updatedAt, deletedAt) VALUES (1, 1, "/images/products/id-1.jpg" ,"remera", "remera negra nueva, estampado en color rojo", NULL, NULL, NULL);
-INSERT INTO products (id, usuario_id, imagen, nombre_producto, descripcion_producto, createdAt, updatedAt, deletedAt) VALUES (2, 1, "/images/products/id-2.jpg" ,"short", "short azul nuevo", NULL, NULL, NULL);
-INSERT INTO products (id, usuario_id, imagen, nombre_producto, descripcion_producto, createdAt, updatedAt, deletedAt) VALUES (3, 2, "/images/products/id-3.jpg" ,"BUZO", "buzo talle 13", NULL, NULL, NULL);
-INSERT INTO products (id, usuario_id, imagen, nombre_producto, descripcion_producto, createdAt, updatedAt, deletedAt) VALUES (4, 2, "/images/products/id-4.webp" ,"JEAN", "jean en perfecto estado", NULL, NULL, NULL);
-INSERT INTO products (id, usuario_id, imagen, nombre_producto, descripcion_producto, createdAt, updatedAt, deletedAt) VALUES (5, 3, "/images/products/id-5.jpg" ,"SWEATER", "sweater talle s nuevo", NULL, NULL, NULL);
-INSERT INTO products (id, usuario_id, imagen, nombre_producto, descripcion_producto, createdAt, updatedAt, deletedAt) VALUES (6, 3, "/images/products/id-6.webp" ,"JEAN NEGRO", "jean nuevo importado", NULL, NULL, NULL);
-INSERT INTO products (id, usuario_id, imagen, nombre_producto, descripcion_producto, createdAt, updatedAt, deletedAt) VALUES (7, 4, "/images/products/id-7.jpg" ,"ZAPATILLAS", "zapatillas nuevas talle 39", NULL, NULL, NULL);
-INSERT INTO products (id, usuario_id, imagen, nombre_producto, descripcion_producto, createdAt, updatedAt, deletedAt) VALUES (8, 4, "/images/products/id-8.jpg" ,"TACOS", "tacos altos importados", NULL, NULL, NULL);
-INSERT INTO products (id, usuario_id, imagen, nombre_producto, descripcion_producto, createdAt, updatedAt, deletedAt) VALUES (9, 5, "/images/products/id-9.webp" ,"CARTERA", "cartera espaciosa nueva", NULL, NULL, NULL);
-INSERT INTO products (id, usuario_id, imagen, nombre_producto, descripcion_producto, createdAt, updatedAt, deletedAt) VALUES (10,5, "/images/products/id-10.jpg" ,"COLLAR", "collar de oro nuevo", NULL, NULL, NULL);
+INSERT INTO products (id, usuario_id, imagen, nombre_producto, descripcion_producto, createdAt, updatedAt, deletedAt) VALUES (1, 1, "../public/images/products/id-1.jpg" ,"remera", "remera negra nueva, estampado en color rojo", NULL, NULL, NULL);
+INSERT INTO products (id, usuario_id, imagen, nombre_producto, descripcion_producto, createdAt, updatedAt, deletedAt) VALUES (2, 1, "../public/images/products/id-2.jpg" ,"short", "short azul nuevo", NULL, NULL, NULL);
+INSERT INTO products (id, usuario_id, imagen, nombre_producto, descripcion_producto, createdAt, updatedAt, deletedAt) VALUES (3, 2, "../public/images/products/id-3.jpg" ,"BUZO", "buzo talle 13", NULL, NULL, NULL);
+INSERT INTO products (id, usuario_id, imagen, nombre_producto, descripcion_producto, createdAt, updatedAt, deletedAt) VALUES (4, 2, "../public/images/products/id-4.webp" ,"JEAN", "jean en perfecto estado", NULL, NULL, NULL);
+INSERT INTO products (id, usuario_id, imagen, nombre_producto, descripcion_producto, createdAt, updatedAt, deletedAt) VALUES (5, 3, "../public/images/products/id-5.jpg" ,"SWEATER", "sweater talle s nuevo", NULL, NULL, NULL);
+INSERT INTO products (id, usuario_id, imagen, nombre_producto, descripcion_producto, createdAt, updatedAt, deletedAt) VALUES (6, 3, "../public/images/products/id-6.webp" ,"JEAN NEGRO", "jean nuevo importado", NULL, NULL, NULL);
+INSERT INTO products (id, usuario_id, imagen, nombre_producto, descripcion_producto, createdAt, updatedAt, deletedAt) VALUES (7, 4, "../public/images/products/id-7.jpg" ,"ZAPATILLAS", "zapatillas nuevas talle 39", NULL, NULL, NULL);
+INSERT INTO products (id, usuario_id, imagen, nombre_producto, descripcion_producto, createdAt, updatedAt, deletedAt) VALUES (8, 4, "../public/images/products/id-8.jpg" ,"TACOS", "tacos altos importados", NULL, NULL, NULL);
+INSERT INTO products (id, usuario_id, imagen, nombre_producto, descripcion_producto, createdAt, updatedAt, deletedAt) VALUES (9, 5, "../public/images/products/id-9.webp" ,"CARTERA", "cartera espaciosa nueva", NULL, NULL, NULL);
+INSERT INTO products (id, usuario_id, imagen, nombre_producto, descripcion_producto, createdAt, updatedAt, deletedAt) VALUES (10,5, "../public/images/products/id-10.jpg" ,"COLLAR", "collar de oro nuevo", NULL, NULL, NULL);
 
 # Insertamos 3 comentarios
 INSERT INTO comentarios (id, usuario_id, products_id, comentario, createdAt, updatedAt, deletedAt) VALUES (1, 1, 1 ,"Me encanto la remera!", NULL, NULL, NULL);
