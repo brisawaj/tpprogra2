@@ -10,7 +10,7 @@ const validateUserForm = [
 ]
 
 // router.get('/id/:id', userController.profile)
-router.get('/profile', userController.profile)
+router.get('/id/:id', userController.profile)
 router.post('/profile', userController.profile)
 
 router.get('/register', userController.register)

@@ -20,6 +20,7 @@ modelos.Product.findAll({
     },
     
 
+    
 };
 
 module.exports = indexController;
