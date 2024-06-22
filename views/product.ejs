@@ -8,17 +8,21 @@
 	<!-- product detail -->
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
-			<h2 class="products-title"><%= producto.producto %></h2> 
+			<a href="/users/id/<%=producto.vendedor.id%>">vendedor: <%= producto.vendedor.email%></a>
+			<h2 class="products-title"><%= producto.nombre_producto %></h2> 
+			<% //if (producto.usuario_id==req.session.usuarioid){%>
 			<p class="product-detail-description">
-				<a href="/products/productAdd">Editar</a>
+				<a href="/products/productEdit/<%=producto.id%>">Editar</a>
+				<a href="/products/productDelete/<%=producto.id%>">borrar</a>
 			</p>
+		<%//}%>
 		</div>
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
 					<img src="<%= producto.imagen %>" alt="" class="product-detail-img">
 					<p class="product-detail-description">
-						<%= producto.descripcion %>.</p>
+						<%= producto.descripcion_producto %>.</p>
 				</article>
 				<div class="col-12 col-lg-4">
 					<%for (var index=0; index < producto.comentarios.length; index++ ){%>

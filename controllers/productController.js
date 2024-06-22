@@ -8,9 +8,10 @@ const productController = {
 
     filterById: function (req, res) {
         // Obtenemos la ID de los query parameters 
-        const filtro= {include: [{association: "vendedor"}]}
+        const filtro= {include: [{association: "vendedor"},{association: "comentarios"}]}
         Product.findByPk(req.params.id, filtro)
         .then(function(producto){
+            //return res.send(producto)
             return res.render('product', {
                 producto: producto
             });  
@@ -22,6 +23,38 @@ const productController = {
     productAdd: function (req, res) {
         return res.render("productAdd", { usuario: db.usuario, productos: db.producto })
     },
+
+    productEdit: function (req, res) {
+        Product.findByPk(req.params.id)
+        .then(function(producto){
+            //return res.send (producto)
+            return res.render("productEdit", { usuario: db.usuario, producto: producto })    
+        })
+        
+    
+    },
+
+    update: function(req, res){
+        console.log(req.body)
+        let producto= {
+            imagen: req.body.image,
+            nombre_producto: req.body.name,
+            descripcion_producto: req.body.description,
+            updatedAt: new Date ()
+        }
+        Product.update(producto, { where:{id:req.params.id}})
+        .then (function(){
+            return res.redirect("/products/id/"+req.params.id)
+        })
+     },
+
+     destroy: function(req, res){
+        console.log(req.body)
+        Product.destroy({ where:{id:req.params.id}})
+        .then (function(){
+            return res.redirect("/")
+        })
+     },
     
     create: function(req, res){
         console.log(req.body)
