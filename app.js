@@ -2,12 +2,10 @@ var createError = require('http-errors');
 const db = require('./db/index');
 var express = require('express');
 var path = require('path');
-var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 //session
+var cookieParser = require('cookie-parser');
 let session = require ("express-session")
-
-
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -28,6 +26,7 @@ app.use(session({
   secret: "productsdb",
   resave: false,
   saveUninitialized: true,
+  cookie: { secure: true } 
 })) 
 
 app.use('/', indexRouter);
@@ -48,6 +47,20 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
+});
+
+app.use(async (req, res, next) => {
+  if (req.cookies.userId && !req.session.userId) {
+      req.session.userId = req.cookies.userId;
+  }
+
+  if (req.session.userId) {
+      const user = await User.findByPk(req.session.userId);
+      if (user) {
+          req.user = user;
+      }
+  }
+  next();
 });
 
 

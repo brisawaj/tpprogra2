@@ -3,9 +3,9 @@ const models = require("../database/models")
 const { Association } = require('sequelize')
 const Users= models.User
 const Product= models.Product
-const productController = {
- 
 
+const productController = {
+    
     filterById: function (req, res) {
         // Obtenemos la ID de los query parameters 
         const filtro= {include: [{association: "vendedor"},{association: "comentarios"}]}
@@ -23,19 +23,14 @@ const productController = {
     productAdd: function (req, res) {
         return res.render("productAdd", { usuario: db.usuario, productos: db.producto })
     },
-
     productEdit: function (req, res) {
         Product.findByPk(req.params.id)
         .then(function(producto){
             //return res.send (producto)
             return res.render("productEdit", { usuario: db.usuario, producto: producto })    
-        })
-        
-    
+        })    
     },
-
     update: function(req, res){
-        console.log(req.body)
         let producto= {
             imagen: req.body.image,
             nombre_producto: req.body.name,
@@ -47,17 +42,13 @@ const productController = {
             return res.redirect("/products/id/"+req.params.id)
         })
      },
-
      destroy: function(req, res){
-        console.log(req.body)
         Product.destroy({ where:{id:req.params.id}})
         .then (function(){
             return res.redirect("/")
         })
      },
-    
     create: function(req, res){
-        console.log(req.body)
         let producto= {
             usuario_id: 2, // cambiar por dato de la session una vez terminado
             imagen: req.body.image,
@@ -71,7 +62,6 @@ const productController = {
             return res.redirect("/")
         })
      }
-
  }
     
     

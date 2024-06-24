@@ -16,24 +16,29 @@ const userController = {
     },
     
     register: function(req, res) {
-        return res.render("register")
+        return res.render("register", { errorMessage: null })
     },
 
-    registerStore: function(req, res) {
+    registerStore: async function(req, res) {
         let passEncriptada = bcrypt.hashSync (req.body.password, 10);
-        db.User.create({
-            email: req.body.email,
-            contra: passEncriptada,
-            fecha: req.body.birthdate,
-            dni: req.body.dni,
-            imagen: req.body.perfil
-        })
-        .then (function(result){
-            return res.redirect ('/profile')
-        }).catch ((error) => {
-            console.log(error);
-            return res.render('register')
-        })
+        const userExists = await db.User.findOne({ where: { email:  req.body.email }})
+        if (userExists) {
+            return res.render('register', { errorMessage: 'Correo electrónico en uso' });
+        } else {
+            db.User.create({
+                email: req.body.email,
+                password: passEncriptada,
+                fecha: req.body.birthdate,
+                dni: req.body.dni,
+                imagen: req.body.perfil,
+            })
+            .then (function(){
+                return res.redirect ('/users/login')
+            }).catch ((error) => {
+                console.log(error);
+                return res.render('register')
+            })
+        }
     },
 
     login: function(req, res) {
@@ -42,9 +47,7 @@ const userController = {
 
     
     loginProcess: function (req, res) {
-        let errors = validationResult (req);
-        let email= req.body.email;
-        let password = req.body.password;
+        const { email, password, rememberMe } = req.body;
         db.User.findOne({
             where: { email: email },
             include: [{ association: "productos" }],
@@ -55,10 +58,13 @@ const userController = {
                 return res.render('login', { errorMessage: 'Correo electrónico no encontrado' });
             }
     
-            // Comparar la contraseña proporcionada con el hash almacenado en la base de datos
-            if (!bcrypt.compareSync(password, resultado.password)) {
+            if (!bcrypt.compareSync(password, resultado.contra)) {
                 return res.render('login', { errorMessage: 'Contraseña incorrecta' });
             } else {
+                if (rememberMe) {
+                    req.session.userId = resultado.id;
+                    res.cookie('userId', resultado.id, { maxAge: 30 * 24 * 60 * 60 * 1000 })
+                }
                 return res.render('profile', { usuario: resultado, productos: resultado.productos });
             }
         })
@@ -83,6 +89,13 @@ const userController = {
     profileEdit: function(req, res) {
         return res.render('profileEdit', { usuario: db.usuario, productos: db.producto })
     },
+
+    logOut: function(req, res) {
+        console.log('herereeee')
+        res.clearCookie('userId');
+        req.session.destroy();
+        res.redirect('/');
+    }
 
  }
     

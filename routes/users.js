@@ -18,7 +18,7 @@ router.post('/register', userController.registerStore)
 
 router.post('/login', validateUserForm, userController.loginProcess)
 router.get('/login', userController.login)
-
+router.get('/logout', userController.logOut)
 router.get('/profileEdit', userController.profileEdit)
 
 module.exports = router;
