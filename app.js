@@ -1,11 +1,11 @@
 var createError = require('http-errors');
-const db = require('./db/index');
+const db = require("./database/models");
 var express = require('express');
 var path = require('path');
 var logger = require('morgan');
 //session
 var cookieParser = require('cookie-parser');
-let session = require ("express-session")
+const session = require ("express-session")
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -15,12 +15,12 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
 
 app.use(session({
   secret: "productsdb",
@@ -29,14 +29,22 @@ app.use(session({
   cookie: { secure: true } 
 })) 
 
+
+app.use((req, res, next)=> {
+  res.locals.cookies = req.cookies.cookieEmail;
+  res.locals.Session = req.session.userSession; 
+  console.log(req.session.userSession)
+  next();
+});
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use ("/products", productsRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
-});
+// app.use(function(req, res, next) {
+//   next(createError(404));
+// });
 
 // error handler
 app.use(function(err, req, res, next) {
@@ -46,20 +54,9 @@ app.use(function(err, req, res, next) {
   // render the error page  
   res.status(err.status || 500);
   res.render('error');
-});
-
-app.use(async (req, res, next) => {
-  if (req.cookies.userId && !req.session.userId) {
-      req.session.userId = req.cookies.userId;
-  }
-  if (req.session.userId) {
-      const user = await User.findByPk(req.session.userId);
-      if (user) {
-          req.user = user;
-      }
-  }
   next();
 });
+
 
 
 module.exports = app;

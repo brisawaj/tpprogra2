@@ -63,10 +63,10 @@ const userController = {
                 return res.render('login', { errorMessage: 'Contraseña incorrecta', exitoMessage: null });
             } else {
                 if (rememberMe) {
-                    res.cookie('userId', resultado.id, { maxAge: 30 * 24 * 60 * 60 * 1000 })
+                    res.cookie('cookieEmail', resultado.email, { maxAge: 30 * 24 * 60 * 60 * 1000 })
+                }else{
+                    req.session.userSession = resultado.email;
                 }
-                res.cookie('userEmail', email);
-                req.session.userId = user.id;
                 return res.render('profile', {holaMessage: 'Hola nuevamente!', usuario: resultado, productos: resultado.productos });
             }
         })
@@ -88,8 +88,7 @@ const userController = {
     },
 
     logOut: function(req, res) {
-        res.clearCookie('userId');
-        res.clearCookie('userEmail'); 
+        res.clearCookie('cookieEmail');
         req.session.destroy();
         res.redirect('/');
     }

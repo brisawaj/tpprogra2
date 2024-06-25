@@ -17,12 +17,11 @@
 </head>
 
 <body>
-	<% if (usuario) { %>
+	<% if (locals.cookies || locals.userSession) { %>
 		<%- include('./partials/headerLogueado') %>
 	<% } else { %>
 		<%- include('./partials/header') %>
 	<%  } %>
-
 		<!-- Banner -->
 		<div class="banner">
 			<img src="images/ESTILo.png" alt="Banner de ofertas">
