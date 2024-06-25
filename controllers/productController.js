@@ -17,8 +17,33 @@ const productController = {
             });  
          })
     },
-    search: function (req, res) {
-        return res.render("search-results", { usuario: db.usuario, productos: db.producto })
+    search: function(req, res) {
+        const query = req.query.q;
+        if (!query) {
+            return res.render('searchResults', { productos: [], mensaje: "No hay resultados para su búsqueda" });
+        }
+        db.Product.findAll({ 
+            where: {
+                [db.Sequelize.Op.or]: [
+                    { nombreProducto: { [db.Sequelize.Op.like]: `%${query}%` } },
+                    { descripcionProducto: { [db.Sequelize.Op.like]: `%${query}%` } }
+                ] 
+            },
+            include: [{ model: db.User, as: 'usuario' }], 
+            order: [['created_at', 'DESC']]
+        }).then(function (productos){
+            if (productos.length === 0) {
+                return res.render('searchResults', { 
+                    productos: [], 
+                    mensaje: "No hay resultados para su búsqueda" });
+            }
+            res.render('searchResults', { 
+                productos, 
+                mensaje: null }); 
+        }).catch(function(error){
+            console.error(error);
+            res.status(500).send('Error interno del servidor');
+        });
     },
     productAdd: function (req, res) {
         return res.render("productAdd", { usuario: db.usuario, productos: db.producto })

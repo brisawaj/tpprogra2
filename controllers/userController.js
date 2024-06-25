@@ -24,6 +24,9 @@ const userController = {
         const userExists = await db.User.findOne({ where: { email:  req.body.email }})
         if (userExists) {
             return res.render('register', { errorMessage: 'Correo electrónico en uso' });
+        }
+        if (req.body.password.length < 4) {
+            return res.render('register', { errorMessage: 'Minimo 4 caracteres la contrasena' });
         } else {
             db.User.create({
                 email: req.body.email,
@@ -32,17 +35,15 @@ const userController = {
                 dni: req.body.dni,
                 imagen: req.body.perfil,
             })
-            .then (function(){
-                return res.redirect ('/users/login')
+            .then(() => {
+                return res.render('login', { exitoMessage: 'Registro exitoso, ingrese sesion', errorMessage: null })
             }).catch ((error) => {
-                console.log(error);
-                return res.render('register')
+                return res.render('register', {errorMessage: null})
             })
         }
     },
-
     login: function(req, res) {
-        return res.render('login', { errorMessage: null })
+        return res.render('login', {errorMessage: null, exitoMessage: null })
     },
 
     
@@ -55,44 +56,40 @@ const userController = {
         })
         .then((resultado) => {
             if (!resultado) {
-                return res.render('login', { errorMessage: 'Correo electrónico no encontrado' });
+                return res.render('login', { errorMessage: 'Correo electrónico no encontrado', exitoMessage: null, usuario: resultado });
             }
     
             if (!bcrypt.compareSync(password, resultado.contra)) {
-                return res.render('login', { errorMessage: 'Contraseña incorrecta' });
+                return res.render('login', { errorMessage: 'Contraseña incorrecta', exitoMessage: null });
             } else {
                 if (rememberMe) {
-                    req.session.userId = resultado.id;
                     res.cookie('userId', resultado.id, { maxAge: 30 * 24 * 60 * 60 * 1000 })
                 }
-                return res.render('profile', { usuario: resultado, productos: resultado.productos });
+                res.cookie('userEmail', email);
+                req.session.userId = user.id;
+                return res.render('profile', {holaMessage: 'Hola nuevamente!', usuario: resultado, productos: resultado.productos });
             }
         })
         .catch((error) => {
-            console.log(error);
-            return res.render('login', { errorMessage: 'Error interno del servidor' });
+            return res.render('login', { errorMessage: 'Error interno del servidor', exitoMessage: null });
         })
     },
-    
+    id: function(req, res) {
+        db.Product.findAll({
+            order:[["createdAt", "DESC"]],
+            include:[{association: "vendedor"},{association: "comentarios"}]
+        })
+    },
     profile: function(req, res) {
-        db.User.findOne({
-            where: [{id: req.params.id}],
-            include:[{association: "productos"}],
-            order:[["createdAt", "DESC"]]  
-        })
-        .then((resultado)=>{
-        return res.render('profile' , { usuario: resultado, productos: resultado.productos })
-        })
-
-        
+        return res.render('profile', {usuario: resultado, productos: resultado.productos});
     },
     profileEdit: function(req, res) {
-        return res.render('profileEdit', { usuario: db.usuario, productos: db.producto })
+        return res.render('profileEdit', { usuario: usuario, productos: producto })
     },
 
     logOut: function(req, res) {
-        console.log('herereeee')
         res.clearCookie('userId');
+        res.clearCookie('userEmail'); 
         req.session.destroy();
         res.redirect('/');
     }

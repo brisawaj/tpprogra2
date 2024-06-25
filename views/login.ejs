@@ -6,7 +6,53 @@
 
 
 <body>
-	<%- include('./partials/header') %>
+<!-- Header -->
+<header class="main-header">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-5 col-md-2">
+                <a href="/" class="main-header_home-link">
+                    <img src="/images/logo-estilo.png">
+                </a>
+            </div>
+
+            <div class="col-7 col-md-6">
+                <form action="/products/search" method="GET" class="search-form">
+                    <input type="text" name="search" placeholder="Buscar productos, marcas y más"
+                        class="search-form_input">
+                    <button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <a class="main-header_credit-link">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    Todas las opiniones en un solo lugar.
+                </a>
+            </div>
+        </div>
+
+        <button class="btn-toggle-navbar">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <nav class="main-navbar">
+            <ul class="left-navbar">
+                <li><a href="/">Todos los productos</a></li>
+                <!-- solo logueado <li><a href="">Cargar productos</a></li> -->
+            </ul>
+
+            <ul class="right-navbar">
+                     
+                <li>
+                    <a href="/users/register">Creá tu cuenta <i class="far fa-address-card"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<!-- /Header -->
 	<!-- Novedades -->
 	<div class="container products-wrapper">
 		<div class="row">
@@ -16,6 +62,11 @@
 			<!-- formulario -->
 			<h2 class="col-12">
 				<form action="/users/login" method="POST">
+                    <% if (exitoMessage) { %>
+                        <div style="color: black;">
+                            <%= exitoMessage %>
+                        </div>
+                    <% } %>
 					<label for="email">Usuario:</label>
 					<input type="text" id="email" name="email" required ><br><br>
 					
@@ -25,11 +76,11 @@
 					<label for="rememberme">Recordarme:</label>
 					<input type="checkbox" id="recordar" name="rememberMe"><br><br>
 					<input type="submit" value="Iniciar sesión" class="button">
-					<% if (errorMessage) { %>
-						<div style="color: red;">
-							<%= errorMessage %>
-						</div>
-					<% } %>
+                    <% if (errorMessage) { %>
+                        <div style="color: red;">
+                            <%= errorMessage %>
+                        </div>
+                    <% } %>
 				  </form>
 			</h2>
 			<%- include('./partials/footer') %>
