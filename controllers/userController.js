@@ -81,7 +81,7 @@ const userController = {
         })
     },
     profile: function(req, res) {
-        return res.render('profile', {usuario: resultado, productos: resultado.productos});
+        return res.render('profile', {holaMessage: 'Hola nuevamente!'});
     },
     profileEdit: function(req, res) {
         return res.render('profileEdit', { usuario: usuario, productos: producto })

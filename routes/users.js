@@ -11,7 +11,7 @@ const validateUserForm = [
 
 // router.get('/id/:id', userController.profile)
 router.get('/id/:id', userController.id)
-router.post('/profile', userController.profile)
+router.get('/profile', userController.profile)
 
 router.get('/register', userController.register)
 router.post('/register', userController.registerStore)
