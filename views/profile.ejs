@@ -74,6 +74,7 @@
 				</div>
 				<div>
 					<ul class="">
+						<li> <%=productos.length %> productos</li>
 						<li>200 seguidores</li>
 						<li>300 comentarios</li>
 					</ul>
@@ -82,7 +83,28 @@
 		</div>
 	</section>
 	<!-- /Datos del usuario -->
-
+	 <!-- Show mis productos -->
+	 <%for (var i=0; i < productos.length ;i++ ){%>
+		<div class="col-12 col-sm-6 col-lg-3">
+			<section class="product-box">
+				<a href="/products/id/<%= productos[i].id %>">
+					<figure class="product-box_image">
+						<img src="<%= productos[i].imagen %>" alt="<%= productos[i].nombre_producto %>">
+					</figure>
+					<article class="product-box_data">
+						<h2>
+							<%=productos[i].nombre_producto %>
+						</h2>
+						<p>
+							<%= productos[i].descripcion_producto %>
+						</p>
+					</article>
+				</a>
+			</section>
+		</div>
+		<% } %>
+</div>
+<!-- /Mis productos -->
 	<!-- Mis productos -->
 	<div class="container products-wrapper">
 		<div class="row">
