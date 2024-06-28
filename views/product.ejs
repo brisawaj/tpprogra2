@@ -10,12 +10,12 @@
 		<div class="d-flex align-items-center">
 			<a href="/users/id/<%=producto.vendedor.id%>">vendedor: <%= producto.vendedor.email%></a>
 			<h2 class="products-title"><%= producto.nombre_producto %></h2> 
-			<% //if (producto.usuario_id==req.session.usuarioid){%>
+			<% if (producto.usuario_id==locals.Usersession.usuarioid){%> 
 			<p class="product-detail-description">
 				<a href="/products/productEdit/<%=producto.id%>">Editar</a>
 				<a href="/products/productDelete/<%=producto.id%>">borrar</a>
 			</p>
-		<%//}%>
+		<%}%>
 		</div>
 		<div class="product-detail">
 			<div class="row">
